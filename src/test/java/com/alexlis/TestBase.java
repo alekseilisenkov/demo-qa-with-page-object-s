@@ -2,6 +2,7 @@ package com.alexlis;
 
 import com.alexlis.helpers.Attach;
 import com.codeborne.selenide.Configuration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -20,6 +21,8 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
+
+
     }
 
     @AfterEach

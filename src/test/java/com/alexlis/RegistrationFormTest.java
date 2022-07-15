@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormTest extends TestBase {
-
     RegistrationPage registrationPage = new RegistrationPage();
+
 
     @DisplayName("Регистрация")
     @Test
@@ -46,7 +46,7 @@ public class RegistrationFormTest extends TestBase {
         step("Загружаем фотографию", () -> {
             registrationPage.uploadPicture("test.jpg");
         });
-        step("Вводим адрес" + TestData.address, () -> {
+        step("Вводим адресс" + TestData.address, () -> {
             registrationPage.typeAddress(TestData.address);
         });
         step("Выбираем штат и город", () -> {
@@ -56,6 +56,7 @@ public class RegistrationFormTest extends TestBase {
         step("Нажимаем на кнопку submit и отправляем данные", () -> {
             registrationPage.submitForm();
         });
+
 
         step("Сверяем заполненные данные с загруженными", () -> {
             registrationPage.checkResultsValue("Student Name", TestData.firstName + " " + TestData.lastName)

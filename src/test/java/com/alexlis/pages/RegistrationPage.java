@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
-
+    // LOCATORS
     private final String registrationFormUrl = "https://demoqa.com/automation-practice-form";
 
     private SelenideElement firstNameInput = $("#firstName"),
