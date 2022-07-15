@@ -27,6 +27,24 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
+def allureVersion = "2.17.2",
+    junitVersion = "5.8.2"
+
+allure {
+    report {
+        version.set(allureVersion)
+    }
+    adapter {
+        autoconfigure.set(true)
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set(allureVersion)
+            }
+        }
+    }
+}
+
 dependencies {
     // Selenide
     testImplementation('com.codeborne:selenide:6.6.1',
