@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormTest extends TestBase {
-    RegistrationPage registrationPage = new RegistrationPage();
 
+    RegistrationPage registrationPage = new RegistrationPage();
 
     @DisplayName("Регистрация")
     @Test

@@ -10,25 +10,24 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
-    // LOCATORS
-    private final String registrationFormUrl = "https://demoqa.com/automation-practice-form";
 
-    private SelenideElement firstNameInput = $("#firstName"),
-                            lastNameInput = $("#lastName"),
-                            emailInput = $("#userEmail"),
-                            genderCheckbox = $("#genterWrapper"),
-                            phoneNumberInput = $("#userNumber"),
-                            subjectWrapper = $("#subjectsInput"),
-                            hobbiesCheckbox = $("#hobbiesWrapper"),
-                            uploadPictureWrapper = $("#uploadPicture"),
-                            addressInput = $("#currentAddress"),
-                            submitBtn = $("#submit"),
-                            resultsTable = $(".table-responsive");
+    private final String registrationFormUrl = "https://demoqa.com/automation-practice-form";
 
     public CalendarComponent calendar = new CalendarComponent();
     public StateAndCityComponent stateAndCity = new StateAndCityComponent();
 
-    // ACTIONS
+    private SelenideElement firstNameInput = $("#firstName"),
+            lastNameInput = $("#lastName"),
+            emailInput = $("#userEmail"),
+            genderCheckbox = $("#genterWrapper"),
+            phoneNumberInput = $("#userNumber"),
+            subjectWrapper = $("#subjectsInput"),
+            hobbiesCheckbox = $("#hobbiesWrapper"),
+            uploadPictureWrapper = $("#uploadPicture"),
+            addressInput = $("#currentAddress"),
+            submitBtn = $("#submit"),
+            resultsTable = $(".table-responsive");
+
     public RegistrationPage openPage() {
         open(registrationFormUrl);
         return this;
@@ -63,6 +62,7 @@ public class RegistrationPage {
         calendar.setDate(year, month, day);
         return this;
     }
+
     public RegistrationPage chooseSubject(String value) {
         subjectWrapper.setValue(value).pressEnter();
         return this;
@@ -100,7 +100,6 @@ public class RegistrationPage {
     public RegistrationPage checkResultsValue(String key, String value) {
         resultsTable.$(byText(key))
                 .parent().shouldHave(text(value));
-
         return this;
     }
 }
