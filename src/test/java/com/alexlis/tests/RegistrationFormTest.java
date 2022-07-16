@@ -1,4 +1,4 @@
-package com.alexlis;
+package com.alexlis.tests;
 
 import com.alexlis.pages.RegistrationPage;
 
@@ -44,7 +44,7 @@ public class RegistrationFormTest extends TestBase {
             registrationPage.setHobbies("Reading");
         });
         step("Загружаем фотографию", () -> {
-            registrationPage.uploadPicture("test.jpg");
+            registrationPage.uploadPicture("image/test.jpg");
         });
         step("Вводим адресс" + TestData.address, () -> {
             registrationPage.typeAddress(TestData.address);

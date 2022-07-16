@@ -1,4 +1,4 @@
-package com.alexlis;
+package com.alexlis.tests;
 import com.github.javafaker.Faker;
 
 import java.util.Locale;
