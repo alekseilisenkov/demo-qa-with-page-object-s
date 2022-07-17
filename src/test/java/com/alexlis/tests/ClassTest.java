@@ -13,4 +13,9 @@ public class ClassTest {
     void secondTest() {
         System.out.println("Bye");
     }
+
+    @Test
+    void secondTet() {
+        System.out.println("Bye");
+    }
 }
