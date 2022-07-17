@@ -16,49 +16,49 @@ public class RegistrationFormTest extends TestBase {
     @Test
     @Description("Тест на заполнение формы регистрации")
     void fillFormTest() {
-        step("Открываем страницу для заполнения формы https://demoqa.com/automation-practice-form", () -> {
+        step("Открытие страницы для заполнения формы https://demoqa.com/automation-practice-form", () -> {
             registrationPage.openPage();
         });
-        step("Вводим имя: " + TestData.firstName, () -> {
+        step("Ввод имени: " + TestData.firstName, () -> {
             registrationPage.typeFirstName(TestData.firstName);
         });
-        step("Вводим фамилию: " + TestData.lastName, () -> {
+        step("Ввод фамилии: " + TestData.lastName, () -> {
             registrationPage.typeLastName(TestData.lastName);
         });
-        step("Вводим адрес почты: " + TestData.email, () -> {
+        step("Ввод адреса почты: " + TestData.email, () -> {
             registrationPage.typeEmail(TestData.email);
         });
-        step("Выбираем пол", () -> {
+        step("Выбор пола", () -> {
             registrationPage.chooseGender("Female");
         });
-        step("Вводим номер телефона: " + TestData.phoneNumber, () -> {
+        step("Ввод номер телефона: " + TestData.phoneNumber, () -> {
             registrationPage.typePhoneNumber(TestData.phoneNumber);
         });
-        step("Выбирает дату рождения", () -> {
+        step("Выбор дату", () -> {
             registrationPage.setBirthdayDate("2001", "February", "3");
         });
-        step("Выбираем предмет", () -> {
+        step("Выбор предмет", () -> {
             registrationPage.chooseSubject("Maths");
         });
-        step("Выбираем хобби", () -> {
+        step("Выбор хобби", () -> {
             registrationPage.setHobbies("Reading");
         });
-        step("Загружаем фотографию", () -> {
+        step("Загрузка фото", () -> {
             registrationPage.uploadPicture("image/test.jpg");
         });
-        step("Вводим адресс" + TestData.address, () -> {
+        step("Ввод адреса" + TestData.address, () -> {
             registrationPage.typeAddress(TestData.address);
         });
-        step("Выбираем штат и город", () -> {
+        step("Выбор штат и город", () -> {
             registrationPage.setState("NCR")
                     .setCity("Delhi");
         });
-        step("Нажимаем на кнопку submit и отправляем данные", () -> {
+        step("Нажатие на кнопку submit", () -> {
             registrationPage.submitForm();
         });
 
 
-        step("Сверяем заполненные данные с загруженными", () -> {
+        step("Проверка заполненных данных с загруженными", () -> {
             registrationPage.checkResultsValue("Student Name", TestData.firstName + " " + TestData.lastName)
                     .checkResultsValue("Student Email", TestData.email)
                     .checkResultsValue("Gender", "Female")
