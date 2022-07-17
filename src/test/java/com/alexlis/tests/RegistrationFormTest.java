@@ -16,7 +16,7 @@ public class RegistrationFormTest extends TestBase {
     @Test
     @Description("Тест на заполнение формы регистрации")
     void fillFormTest() {
-        step("Открытие страницы для заполнения формы https://demoqa.com/automation-practice-form", () -> {
+        step("Открытие страницы для заполнения формы", () -> {
             registrationPage.openPage();
         });
         step("Ввод имени: " + TestData.firstName, () -> {
@@ -31,13 +31,13 @@ public class RegistrationFormTest extends TestBase {
         step("Выбор пола", () -> {
             registrationPage.chooseGender("Female");
         });
-        step("Ввод номер телефона: " + TestData.phoneNumber, () -> {
+        step("Ввод номера телефона: " + TestData.phoneNumber, () -> {
             registrationPage.typePhoneNumber(TestData.phoneNumber);
         });
-        step("Выбор дату", () -> {
+        step("Выбор даты", () -> {
             registrationPage.setBirthdayDate("2001", "February", "3");
         });
-        step("Выбор предмет", () -> {
+        step("Выбор предмета", () -> {
             registrationPage.chooseSubject("Maths");
         });
         step("Выбор хобби", () -> {
@@ -46,10 +46,10 @@ public class RegistrationFormTest extends TestBase {
         step("Загрузка фото", () -> {
             registrationPage.uploadPicture("image/test.jpg");
         });
-        step("Ввод адреса" + TestData.address, () -> {
+        step("Ввод адреса: " + TestData.address, () -> {
             registrationPage.typeAddress(TestData.address);
         });
-        step("Выбор штат и город", () -> {
+        step("Выбор штата и города", () -> {
             registrationPage.setState("NCR")
                     .setCity("Delhi");
         });
@@ -57,8 +57,7 @@ public class RegistrationFormTest extends TestBase {
             registrationPage.submitForm();
         });
 
-
-        step("Проверка заполненных данных с загруженными", () -> {
+        step("Проверка заполненных данных", () -> {
             registrationPage.checkResultsValue("Student Name", TestData.firstName + " " + TestData.lastName)
                     .checkResultsValue("Student Email", TestData.email)
                     .checkResultsValue("Gender", "Female")
@@ -70,6 +69,5 @@ public class RegistrationFormTest extends TestBase {
                     .checkResultsValue("Address", TestData.address)
                     .checkResultsValue("State and City", "NCR Delhi");
         });
-
     }
 }
