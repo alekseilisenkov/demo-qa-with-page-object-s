@@ -53,7 +53,7 @@ public class RegistrationFormTest extends TestBase {
             registrationPage.setState("NCR")
                     .setCity("Delhi");
         });
-        step("Нажатие кнопки submit", () -> {
+        step("Нажатие кнопки", () -> {
             registrationPage.submitForm();
         });
 
