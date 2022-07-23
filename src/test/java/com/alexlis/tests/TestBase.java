@@ -21,6 +21,9 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+        String selenoidUrl = System.getProperty("url");
+        String login = credentials.login();
+        String password = credentials.password();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
@@ -28,10 +31,6 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-
-        String selenoidUrl = System.getProperty("url"); // clean properties_test -Durl={'JENKINS_VALUE'}
-        String login = credentials.login();
-        String password = credentials.password();
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
         Configuration.remote = format("https://%s:%s@" + selenoidUrl, login, password);

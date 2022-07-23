@@ -57,36 +57,8 @@ tasks.withType(Test) {
 
 }
 
-
-task properties_tests(type: Test) {
+task properties_test(type: Test) {
     useJUnitPlatform {
         includeTags "main"
-
     }
 }
-
-// Запуск теста по тегу
-task properties_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "properties"
-
-    }
-}
-
-// Запуск теста по тегу
-//task properties_tests(type: Test) {
-//    systemProperties("browserSize", System.getProperty("browserSize", "400x400"))
-//    useJUnitPlatform {
-//        includeTags "properties"
-//
-//    }
-//}
-
-    // Запуск тестов по тегу
-//    task many_tags_tests(type: Test) {
-//        useJUnitPlatform {
-//            includeTags "properties"
-//            includeTags "number2"
-//            excludeTags "number3"
-//        }
-//    }

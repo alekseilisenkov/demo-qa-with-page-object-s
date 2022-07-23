@@ -23,11 +23,4 @@ public class SystemPropertiesTest {
         System.out.println(value);
         System.out.println(size);
     }
-
-    //    gradle clean properties_test
-    //    chrome
-
-    //    gradle clean properties_test -Dbrowser=opera - Dsize=400x400
-    //    opera
-
 }
