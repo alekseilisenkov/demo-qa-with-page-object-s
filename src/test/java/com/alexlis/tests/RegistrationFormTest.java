@@ -2,6 +2,8 @@ package com.alexlis.tests;
 
 import com.alexlis.pages.RegistrationPage;
 
+import com.alexlis.pages.TestBase;
+import com.alexlis.pages.TestData;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

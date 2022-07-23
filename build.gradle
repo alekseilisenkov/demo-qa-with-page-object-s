@@ -43,6 +43,8 @@ compileJava {
 }
 
 tasks.withType(Test) {
+    //Настройка для принятия настроек groovy в java
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -51,4 +53,32 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
+
 }
+
+
+// Запуск теста по тегу
+task properties_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "properties"
+
+    }
+}
+
+// Запуск теста по тегу
+task properties_tests(type: Test) {
+    systemProperties("browserSize", System.getProperty("browserSize", "400x400"))
+    useJUnitPlatform {
+        includeTags "properties"
+
+    }
+}
+
+    // Запуск тестов по тегу
+    task many_tags_tests(type: Test) {
+        useJUnitPlatform {
+            includeTags "properties"
+            includeTags "number2"
+            excludeTags "number3"
+        }
+    }

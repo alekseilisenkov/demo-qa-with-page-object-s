@@ -1,4 +1,4 @@
-package com.alexlis.tests;
+package com.alexlis.pages;
 
 import com.alexlis.helpers.Attach;
 import com.codeborne.selenide.Configuration;
