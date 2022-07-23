@@ -58,6 +58,13 @@ tasks.withType(Test) {
 }
 
 
+task properties_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "main"
+
+    }
+}
+
 // Запуск теста по тегу
 task properties_tests(type: Test) {
     useJUnitPlatform {
