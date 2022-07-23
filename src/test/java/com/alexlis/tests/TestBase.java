@@ -21,7 +21,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        String selenoidUrl = System.getProperty("url");
+        String selenoidUrl = System.getProperty("url"); // clean properties_test -Durl={'JENKINS_VALUE'}
         String login = credentials.login();
         String password = credentials.password();
 
