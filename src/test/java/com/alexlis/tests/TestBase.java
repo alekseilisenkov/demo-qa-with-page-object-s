@@ -21,7 +21,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        String selenoidUrl = System.getProperty("url"); // clean properties_test -Durl={'JENKINS_VALUE'}
+        String selenoidUrl = System.getProperty("url", credentials.browserURL()); // clean properties_test -Durl={'JENKINS_VALUE'}
         String login = credentials.login();
         String password = credentials.password();
 
@@ -33,7 +33,9 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
-        Configuration.remote = format("https://%s:%s@" + selenoidUrl, login, password);
+        Configuration.remote = format("https://%s:%s@%s" + login, password, selenoidUrl);
+
+
     }
 
     @AfterEach

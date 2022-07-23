@@ -3,6 +3,8 @@ package com.alexlis.tests;
 import com.alexlis.pages.RegistrationPage;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,7 @@ public class RegistrationFormTest extends TestBase {
     @Tag("main")
     @DisplayName("Регистрация")
     @Test
+    @Severity(SeverityLevel.NORMAL)
     @Description("Тест на заполнение формы регистрации")
     void fillFormTest() {
         step("Открытие страницы для заполнения формы", () -> {
