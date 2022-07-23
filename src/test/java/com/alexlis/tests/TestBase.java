@@ -38,6 +38,13 @@ public class TestBase {
 
     }
 
+//    public static void main(String[] args) {
+//        String selenoidUrl = System.getProperty("browser", credentials.browserURL());
+//        String login = credentials.login();
+//        String password = credentials.password();
+//        System.out.println(selenoidUrl + login + password);
+//    }
+
     @AfterEach
     public void tearDown() {
         Attach.screenshotAs("Last screenshot");
