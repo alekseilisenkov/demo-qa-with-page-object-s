@@ -1,4 +1,4 @@
-package com.alexlis.pages;
+package com.alexlis.tests;
 
 import com.github.javafaker.Faker;
 
