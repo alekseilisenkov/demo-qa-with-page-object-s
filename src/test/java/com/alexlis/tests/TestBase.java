@@ -1,4 +1,4 @@
-package com.alexlis.properties.tests;
+package com.alexlis.tests;
 
 import com.alexlis.config.CredentialsConfig;
 import com.alexlis.helpers.Attach;
