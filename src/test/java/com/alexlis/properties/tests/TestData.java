@@ -1,4 +1,4 @@
-package com.alexlis.tests;
+package com.alexlis.properties.tests;
 
 import com.github.javafaker.Faker;
 

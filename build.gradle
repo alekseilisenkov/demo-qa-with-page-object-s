@@ -62,3 +62,42 @@ task properties_tests(type: Test) {
 
     }
 }
+
+/*
+java  \
+"-DprojectName=PROJECT_NAME" \
+"-Denv=ENVIRONMENT" \
+"-DreportLink=BUILD_URL" \
+"-Dcomm=Any comment here" \
+"-Dconfig.file=src/test/resources/notifications/telegram.json" \
+-jar allure-notifications-3.1.2.jar
+ */
+
+/*
+java
+"-Dchat.id=-693854517"
+"-Dbot.token=5371414737:AAHR1QyUnUBc63fxdElZItOndfrEB7KvfdA"
+"-Dbuild.launch.name=Some release 2.0"
+"-Dbuild.env=https://prod.your.site"
+"-Dlang=en"
+"-Denable.chart=true"
+"-Dallure.report.folder=allure-report/"
+-jar allure-notifications-4.2.0.jar
+ */
+
+/*
+java  \
+"-Dchat.id=-1053872341..." \
+"-Dbot.token=1265622901:AAHTwGNmvuqc..." \
+"-Dproject.name=${JOB_BASE_NAME}" \             <- jenkins environment var
+"-Dbuild.launch.name=Some release 2.0" \
+"-Dbuild.env=https://prod.your.site" \
+"-Dbuild.report.link=${BUILD_URL}" \            <- jenkins environment var
+"-Dlang=en" \
+"-Denable.chart=true" \
+"-Dallure.report.folder=./allure-report/" \
+-jar allure-notifications-2.2.1.jar
+ */
+
+
+java "-DprojectName=PROJECT_NAME" "-Denv=ENVIRONMENT" "-DreportLink=BUILD_URL" "-Dcomm=Any comment here" "-Dconfig.file=src/test/resources/notifications/telegram.json" -jar allure-notifications-3.1.2.jar
