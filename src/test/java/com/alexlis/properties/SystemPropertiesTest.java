@@ -1,6 +1,5 @@
 package com.alexlis.properties;
 
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTest {
@@ -11,7 +10,6 @@ public class SystemPropertiesTest {
         String value = System.getProperty("value", "default_value");
         System.out.println(value);
     }
-
 
     // Для тренировки
     @Test
