@@ -59,14 +59,23 @@ tasks.withType(Test) {
 task properties_tests(type: Test) {
     useJUnitPlatform {
         includeTags "main"
-
     }
 }
 
 task simple_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "simple"
+
     }
 }
+
+//java
+//"-DprojectName=${PROJECT_NAME}" \
+//"-Denv=${ENVIRONMENT}"
+//"-DreportLink=${BUILD_URL}"
+//"-Dcomm=Any comment here"
+//"-Dconfig.file=./src/test/resources/notifications/telegram.json"
+//-jar allure-notifications-3.1.2.jar
+//java "-DprojectName=PROJECT_NAME" "-Denv=ENVIRONMENT" "-DreportLink=BUILD_URL" "-Dcomm=Any comment here" "-Dconfig.file=src/test/resources/notifications/telegram.json" -jar allure-notifications-3.1.2.jar
+
 
 //java "-DprojectName=PROJECT_NAME" "-Denv=ENVIRONMENT" "-DreportLink=BUILD_URL" "-Dcomm=Any comment here" "-Dconfig.file=src/test/resources/notifications/telegram.json" -jar allure-notifications-3.1.2.jar
