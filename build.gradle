@@ -64,7 +64,6 @@ task properties_tests(type: Test) {
 
 task simple_tests(type: Test) {
     useJUnitPlatform {
-
     }
 }
 
